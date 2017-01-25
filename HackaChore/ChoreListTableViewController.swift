@@ -65,9 +65,9 @@ class ChoreListTableViewController: UITableViewController {
     let choreItem = items[indexPath.row]
     
     cell.textLabel?.text = choreItem.name
-    cell.detailTextLabel?.text = choreItem.addedByUser
+    cell.detailTextLabel?.text = "Added By: " + choreItem.addedByUser
     
-    toggleCellCheckbox(cell, isCompleted: choreItem.completed)
+    toggleCellCheckbox(cell, isCompleted: choreItem.completed, chore: choreItem)
     
     return cell
   }
@@ -83,12 +83,9 @@ class ChoreListTableViewController: UITableViewController {
       
       let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
         guard let textField = alert.textFields?.first, let text = textField.text else { return }
-        let choreItem = ChoreItem(name: text, addedByUser: self.user.email, completed: false)
-        let choreItemRef = self.ref.child(text.lowercased())
-        choreItemRef.updateChildValues([
+        choreItem.ref?.updateChildValues([
           "name": text
           ])
-//        choreItemRef.setValue(choreItem.toAnyObject())
       }
       
       let cancelAction = UIAlertAction(title: "Cancel", style: .default)
@@ -102,6 +99,8 @@ class ChoreListTableViewController: UITableViewController {
       
       // UPDATE DB
     })
+    
+    // DELETE CELL ROW SLIDER BUTTON
     let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
       let choreItem = self.items[indexPath.row]
       choreItem.ref?.removeValue()
@@ -110,26 +109,29 @@ class ChoreListTableViewController: UITableViewController {
     return [deleteAction,updateAction]
   }
   
-  // DELETE CELL ROW SLIDER BUTTON
+  // UPDATING CHECKBOX
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let cell = tableView.cellForRow(at: indexPath) else { return }
     let choreItem = items[indexPath.row]
     let toggledCompletion = !choreItem.completed
-    toggleCellCheckbox(cell, isCompleted: toggledCompletion)
+    toggleCellCheckbox(cell, isCompleted: toggledCompletion, chore: choreItem)
     choreItem.ref?.updateChildValues([
-      "completed": toggledCompletion
+      "completed": toggledCompletion,
+      "completedByUser": self.user.email
       ])
   }
   
-  func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool) {
+  func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool, chore: ChoreItem) {
     if !isCompleted {
       cell.accessoryType = .none
       cell.textLabel?.textColor = UIColor.black
       cell.detailTextLabel?.textColor = UIColor.black
+      cell.detailTextLabel?.text = "Added By: " + chore.addedByUser
     } else {
       cell.accessoryType = .checkmark
       cell.textLabel?.textColor = UIColor.gray
       cell.detailTextLabel?.textColor = UIColor.gray
+      cell.detailTextLabel?.text = "Added By: " + chore.addedByUser + " / Completed By:" + chore.completedByUser
     }
   }
     
@@ -138,7 +140,7 @@ class ChoreListTableViewController: UITableViewController {
     
     let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
     guard let textField = alert.textFields?.first, let text = textField.text else { return }
-    let choreItem = ChoreItem(name: text, addedByUser: self.user.email, completed: false)
+      let choreItem = ChoreItem(name: text, addedByUser: self.user.email, completedByUser: "", completed: false)
     let choreItemRef = self.ref.child(text.lowercased())
     choreItemRef.setValue(choreItem.toAnyObject())
     }
