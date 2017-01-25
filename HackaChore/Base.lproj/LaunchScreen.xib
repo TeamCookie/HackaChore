@@ -16,14 +16,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Bhk-nJ-6CT">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="32" y="0.0" width="311" height="667"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Bhk-nJ-6CT" firstAttribute="top" secondItem="qcN-j2-aqC" secondAttribute="top" id="0Q1-S1-hQ2"/>
-                <constraint firstItem="Bhk-nJ-6CT" firstAttribute="leading" secondItem="qcN-j2-aqC" secondAttribute="leading" id="5pc-fN-n2o"/>
-                <constraint firstAttribute="trailing" secondItem="Bhk-nJ-6CT" secondAttribute="trailing" id="CxO-ls-4iS"/>
+                <constraint firstItem="Bhk-nJ-6CT" firstAttribute="leading" secondItem="qcN-j2-aqC" secondAttribute="leading" constant="32" id="5pc-fN-n2o"/>
+                <constraint firstAttribute="trailing" secondItem="Bhk-nJ-6CT" secondAttribute="trailing" constant="32" id="CxO-ls-4iS"/>
                 <constraint firstAttribute="bottom" secondItem="Bhk-nJ-6CT" secondAttribute="bottom" id="NOF-YS-pTw"/>
             </constraints>
             <point key="canvasLocation" x="576" y="68"/>
