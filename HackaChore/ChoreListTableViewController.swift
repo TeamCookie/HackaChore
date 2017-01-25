@@ -10,6 +10,7 @@ class ChoreListTableViewController: UITableViewController {
   
   let ref = FIRDatabase.database().reference(withPath: "chore-items")
   let usersRef = FIRDatabase.database().reference(withPath: "online")
+  let dataBaseRef = FIRDatabase.database().reference()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -146,7 +147,7 @@ class ChoreListTableViewController: UITableViewController {
     let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
       guard let textField = alert.textFields?.first, let text = textField.text else { return }
       let choreItem = ChoreItem(name: text, addedByUser: self.user.email, completedByUser: "", completed: false)
-      let choreItemRef = self.ref.child(text.lowercased())
+      let choreItemRef = self.dataBaseRef.child("chore-items").childByAutoId()
       choreItemRef.setValue(choreItem.toAnyObject())
     }
     
