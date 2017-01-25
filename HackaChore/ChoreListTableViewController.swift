@@ -72,33 +72,35 @@ class ChoreListTableViewController: UITableViewController {
     return cell
   }
   
-//  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//
-//    let update = UITableViewRowAction(style: .normal, title: "update") { action, index in
-//      print("favorite button tapped")
-//    }
-//    update.backgroundColor = UIColor.orange
-//    return true
-//  }
-  
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//    if editingStyle == .delete {
-//      let choreItem = items[indexPath.row]
-//      choreItem.ref?.removeValue()
     }
   
   override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let updateAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Update" , handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
-      let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
+      let choreItem = self.items[indexPath.row]
       
-      let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: nil)
-      let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+      let alert = UIAlertController(title: "Chore Item", message: "Edit a Chore", preferredStyle: .alert)
       
-      shareMenu.addAction(twitterAction)
-      shareMenu.addAction(cancelAction)
+      let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+        guard let textField = alert.textFields?.first, let text = textField.text else { return }
+        let choreItem = ChoreItem(name: text, addedByUser: self.user.email, completed: false)
+        let choreItemRef = self.ref.child(text.lowercased())
+        choreItemRef.updateChildValues([
+          "name": text
+          ])
+//        choreItemRef.setValue(choreItem.toAnyObject())
+      }
       
-      self.present(shareMenu, animated: true, completion: nil)
+      let cancelAction = UIAlertAction(title: "Cancel", style: .default)
       
+      let textField = alert.addTextField(){ (textField) in
+        textField.text = choreItem.name
+      }
+      alert.addAction(saveAction)
+      alert.addAction(cancelAction)
+      self.present(alert, animated: true, completion: nil)
+      
+      // UPDATE DB
     })
     let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
       let choreItem = self.items[indexPath.row]
@@ -108,6 +110,7 @@ class ChoreListTableViewController: UITableViewController {
     return [deleteAction,updateAction]
   }
   
+  // DELETE CELL ROW SLIDER BUTTON
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let cell = tableView.cellForRow(at: indexPath) else { return }
     let choreItem = items[indexPath.row]
@@ -131,20 +134,16 @@ class ChoreListTableViewController: UITableViewController {
   }
     
   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-    let alert = UIAlertController(title: "Chore Item",
-                                  message: "Add a Chore",
-                                  preferredStyle: .alert)
+    let alert = UIAlertController(title: "Chore Item", message: "Add a Chore", preferredStyle: .alert)
     
     let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-          guard let textField = alert.textFields?.first, let text = textField.text else { return }
-          let choreItem = ChoreItem(name: text, addedByUser: self.user.email,
-                                        completed: false)
-          let choreItemRef = self.ref.child(text.lowercased())
-          choreItemRef.setValue(choreItem.toAnyObject())
+    guard let textField = alert.textFields?.first, let text = textField.text else { return }
+    let choreItem = ChoreItem(name: text, addedByUser: self.user.email, completed: false)
+    let choreItemRef = self.ref.child(text.lowercased())
+    choreItemRef.setValue(choreItem.toAnyObject())
     }
     
-    let cancelAction = UIAlertAction(title: "Cancel",
-                                     style: .default)
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default)
     
     alert.addTextField()
     
