@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EEF0CAC1E38317C00F117A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EEF0CAB1E38317C00F117A3 /* GoogleService-Info.plist */; };
+		53B7C20050CDF09792072E00 /* libPods-HackaChore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 775A95D7D5F521DED81CC764 /* libPods-HackaChore.a */; };
+		BB2385621B3DD5AB0079CD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385611B3DD5AB0079CD01 /* AppDelegate.swift */; };
+		BB2385641B3DD5AB0079CD01 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385631B3DD5AB0079CD01 /* LoginViewController.swift */; };
+		BB2385671B3DD5AB0079CD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB2385651B3DD5AB0079CD01 /* Main.storyboard */; };
+		BB2385691B3DD5AB0079CD01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB2385681B3DD5AB0079CD01 /* Images.xcassets */; };
+		BB23856C1B3DD5AB0079CD01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB23856A1B3DD5AB0079CD01 /* LaunchScreen.xib */; };
+		BB2385841B3DD8660079CD01 /* ChoreListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385831B3DD8660079CD01 /* ChoreListTableViewController.swift */; };
+		BB23858A1B3DD9640079CD01 /* ChoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2385891B3DD9640079CD01 /* ChoreItem.swift */; };
+		BB30CD4A1B439B60004B3177 /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */; };
+		BB7DA5111B42C8100018B530 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7DA5101B42C8100018B530 /* User.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4EB4C50F1E38293400DB486C /* HackaChore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HackaChore.entitlements; sourceTree = "<group>"; };
+		4EEF0CAB1E38317C00F117A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		775A95D7D5F521DED81CC764 /* libPods-HackaChore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackaChore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB23855C1B3DD5AB0079CD01 /* HackaChore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackaChore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2385601B3DD5AB0079CD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB2385611B3DD5AB0079CD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB2385631B3DD5AB0079CD01 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BB2385661B3DD5AB0079CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB2385681B3DD5AB0079CD01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BB23856B1B3DD5AB0079CD01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BB2385831B3DD8660079CD01 /* ChoreListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreListTableViewController.swift; sourceTree = "<group>"; };
+		BB2385851B3DD8820079CD01 /* HackaChore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackaChore-Bridging-Header.h"; sourceTree = "<group>"; };
+		BB2385891B3DD9640079CD01 /* ChoreItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoreItem.swift; sourceTree = "<group>"; };
+		BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
+		BB7DA5101B42C8100018B530 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DE531F13E9A8CEFBA15CEB78 /* Pods-HackaChore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackaChore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackaChore/Pods-HackaChore.debug.xcconfig"; sourceTree = "<group>"; };
+		E28A14BDD89FACAB6EABC5B9 /* Pods-HackaChore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackaChore.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackaChore/Pods-HackaChore.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB2385591B3DD5AB0079CD01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B7C20050CDF09792072E00 /* libPods-HackaChore.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		661B2016EB2EAFC4A2DDB611 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE531F13E9A8CEFBA15CEB78 /* Pods-HackaChore.debug.xcconfig */,
+				E28A14BDD89FACAB6EABC5B9 /* Pods-HackaChore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69D3054E3F39050ED91D901A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				775A95D7D5F521DED81CC764 /* libPods-HackaChore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB2385531B3DD5AB0079CD01 = {
+			isa = PBXGroup;
+			children = (
+				BB23855E1B3DD5AB0079CD01 /* HackaChore */,
+				BB23855D1B3DD5AB0079CD01 /* Assets */,
+				661B2016EB2EAFC4A2DDB611 /* Pods */,
+				69D3054E3F39050ED91D901A /* Frameworks */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			wrapsLines = 1;
+		};
+		BB23855D1B3DD5AB0079CD01 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BB23855C1B3DD5AB0079CD01 /* HackaChore.app */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		BB23855E1B3DD5AB0079CD01 /* HackaChore */ = {
+			isa = PBXGroup;
+			children = (
+				4EB4C50F1E38293400DB486C /* HackaChore.entitlements */,
+				BB2385891B3DD9640079CD01 /* ChoreItem.swift */,
+				BB7DA5101B42C8100018B530 /* User.swift */,
+				BB2385631B3DD5AB0079CD01 /* LoginViewController.swift */,
+				BB2385831B3DD8660079CD01 /* ChoreListTableViewController.swift */,
+				BB30CD491B439B60004B3177 /* OnlineUsersTableViewController.swift */,
+				BB2385651B3DD5AB0079CD01 /* Main.storyboard */,
+				BB23856A1B3DD5AB0079CD01 /* LaunchScreen.xib */,
+				BB2385611B3DD5AB0079CD01 /* AppDelegate.swift */,
+				BB2385681B3DD5AB0079CD01 /* Images.xcassets */,
+				4EEF0CAB1E38317C00F117A3 /* GoogleService-Info.plist */,
+				BB2385601B3DD5AB0079CD01 /* Info.plist */,
+				BB2385851B3DD8820079CD01 /* HackaChore-Bridging-Header.h */,
+			);
+			path = HackaChore;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB23855B1B3DD5AB0079CD01 /* HackaChore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB23857B1B3DD5AB0079CD01 /* Build configuration list for PBXNativeTarget "HackaChore" */;
+			buildPhases = (
+				3883FC93FA723E8D2EC0369F /* [CP] Check Pods Manifest.lock */,
+				BB2385581B3DD5AB0079CD01 /* Sources */,
+				BB2385591B3DD5AB0079CD01 /* Frameworks */,
+				BB23855A1B3DD5AB0079CD01 /* Resources */,
+				4FF4D16569385145800EEED8 /* [CP] Embed Pods Frameworks */,
+				B4E62CA0011CA4F1DB355801 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackaChore;
+			productName = Grocr;
+			productReference = BB23855C1B3DD5AB0079CD01 /* HackaChore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB2385541B3DD5AB0079CD01 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+					BB23855B1B3DD5AB0079CD01 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 99TJNPY592;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = BB2385571B3DD5AB0079CD01 /* Build configuration list for PBXProject "HackaChore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB2385531B3DD5AB0079CD01;
+			productRefGroup = BB23855D1B3DD5AB0079CD01 /* Assets */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB23855B1B3DD5AB0079CD01 /* HackaChore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB23855A1B3DD5AB0079CD01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB2385671B3DD5AB0079CD01 /* Main.storyboard in Resources */,
+				BB23856C1B3DD5AB0079CD01 /* LaunchScreen.xib in Resources */,
+				BB2385691B3DD5AB0079CD01 /* Images.xcassets in Resources */,
+				4EEF0CAC1E38317C00F117A3 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3883FC93FA723E8D2EC0369F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4FF4D16569385145800EEED8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackaChore/Pods-HackaChore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E62CA0011CA4F1DB355801 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackaChore/Pods-HackaChore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB2385581B3DD5AB0079CD01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB2385641B3DD5AB0079CD01 /* LoginViewController.swift in Sources */,
+				BB2385841B3DD8660079CD01 /* ChoreListTableViewController.swift in Sources */,
+				BB23858A1B3DD9640079CD01 /* ChoreItem.swift in Sources */,
+				BB30CD4A1B439B60004B3177 /* OnlineUsersTableViewController.swift in Sources */,
+				BB7DA5111B42C8100018B530 /* User.swift in Sources */,
+				BB2385621B3DD5AB0079CD01 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB2385651B3DD5AB0079CD01 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB2385661B3DD5AB0079CD01 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB23856A1B3DD5AB0079CD01 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB23856B1B3DD5AB0079CD01 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB2385791B3DD5AB0079CD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB23857A1B3DD5AB0079CD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB23857C1B3DD5AB0079CD01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE531F13E9A8CEFBA15CEB78 /* Pods-HackaChore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HackaChore/HackaChore.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 99TJNPY592;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/HackaChore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingdojo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HackaChore/HackaChore-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BB23857D1B3DD5AB0079CD01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E28A14BDD89FACAB6EABC5B9 /* Pods-HackaChore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HackaChore/HackaChore.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 99TJNPY592;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/HackaChore/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codingdojo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HackaChore/HackaChore-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB2385571B3DD5AB0079CD01 /* Build configuration list for PBXProject "HackaChore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB2385791B3DD5AB0079CD01 /* Debug */,
+				BB23857A1B3DD5AB0079CD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB23857B1B3DD5AB0079CD01 /* Build configuration list for PBXNativeTarget "HackaChore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB23857C1B3DD5AB0079CD01 /* Debug */,
+				BB23857D1B3DD5AB0079CD01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB2385541B3DD5AB0079CD01 /* Project object */;
+}
