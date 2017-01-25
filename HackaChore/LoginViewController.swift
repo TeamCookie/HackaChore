@@ -10,6 +10,12 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    var bgImage = UIImage(named: "background")
+    var imageView = UIImageView(frame: self.view.bounds)
+    imageView.image = bgImage
+    self.view.addSubview(imageView)
+    self.view.sendSubview(toBack: imageView)
+    
     FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
       if user != nil {
         self.performSegue(withIdentifier: self.loginToList, sender: nil)
