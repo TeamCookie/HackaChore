@@ -72,15 +72,40 @@ class ChoreListTableViewController: UITableViewController {
     return cell
   }
   
-  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-    return true
-  }
+//  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//
+//    let update = UITableViewRowAction(style: .normal, title: "update") { action, index in
+//      print("favorite button tapped")
+//    }
+//    update.backgroundColor = UIColor.orange
+//    return true
+//  }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    if editingStyle == .delete {
-      let choreItem = items[indexPath.row]
-      choreItem.ref?.removeValue()
+//    if editingStyle == .delete {
+//      let choreItem = items[indexPath.row]
+//      choreItem.ref?.removeValue()
     }
+  
+  override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    let updateAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Update" , handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
+      let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
+      
+      let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: nil)
+      let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+      
+      shareMenu.addAction(twitterAction)
+      shareMenu.addAction(cancelAction)
+      
+      self.present(shareMenu, animated: true, completion: nil)
+      
+    })
+    let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
+      let choreItem = self.items[indexPath.row]
+      choreItem.ref?.removeValue()
+    })
+    updateAction.backgroundColor = UIColor.lightGray
+    return [deleteAction,updateAction]
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
