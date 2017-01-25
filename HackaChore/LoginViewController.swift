@@ -18,9 +18,7 @@ class LoginViewController: UIViewController {
   }
   
   @IBAction func loginDidTouch(_ sender: AnyObject) {
-//    performSegue(withIdentifier: loginToList, sender: nil)
-      FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!,
-                             password: textFieldLoginPassword.text!)
+      FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!, password: textFieldLoginPassword.text!)
   }
   
   @IBAction func signUpDidTouch(_ sender: AnyObject) {
