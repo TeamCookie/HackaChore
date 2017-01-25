@@ -2,18 +2,14 @@ import UIKit
 
 class ChoreListTableViewController: UITableViewController {
 
-  // MARK: Constants
   let listToUsers = "ListToUsers"
   
-  // MARK: Properties 
   var items: [ChoreItem] = []
   var user: User!
   var userCountBarButtonItem: UIBarButtonItem!
   
   let ref = FIRDatabase.database().reference(withPath: "chore-items")
   let usersRef = FIRDatabase.database().reference(withPath: "online")
-  
-  // MARK: UIViewController Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,12 +34,6 @@ class ChoreListTableViewController: UITableViewController {
       currentUserRef.onDisconnectRemoveValue()
     }
     
-//    user = User(uid: "FakeId", email: "hungry@person.food")
-    
-//    ref.observe(.value, with: { snapshot in
-//      print(snapshot.value)
-//    })
-    
     ref.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
       var newItems: [ChoreItem] = []
       
@@ -66,8 +56,6 @@ class ChoreListTableViewController: UITableViewController {
     
   }
   
-  // MARK: UITableView Delegate methods
-  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
@@ -87,13 +75,6 @@ class ChoreListTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }
-  
-//  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//    if editingStyle == .delete {
-//      items.remove(at: indexPath.row)
-//      tableView.reloadData()
-//    }
-//  }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
@@ -123,9 +104,7 @@ class ChoreListTableViewController: UITableViewController {
       cell.detailTextLabel?.textColor = UIColor.gray
     }
   }
-  
-  // MARK: Add Item
-  
+    
   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
     let alert = UIAlertController(title: "Chore Item",
                                   message: "Add a Chore",
