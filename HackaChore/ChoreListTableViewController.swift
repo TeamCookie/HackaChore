@@ -16,24 +16,20 @@ class ChoreListTableViewController: UITableViewController {
     
     tableView.allowsMultipleSelectionDuringEditing = false
     
-    userCountBarButtonItem = UIBarButtonItem(title: "1",
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(userCountButtonDidTouch))
+    userCountBarButtonItem = UIBarButtonItem(title: "1", style: .plain, target: self, action: #selector(userCountButtonDidTouch))
     userCountBarButtonItem.tintColor = UIColor.white
     navigationItem.leftBarButtonItem = userCountBarButtonItem
     
     FIRAuth.auth()!.addStateDidChangeListener { auth, user in
       guard let user = user else { return }
       self.user = User(authData: user)
-      // 1
       let currentUserRef = self.usersRef.child(self.user.uid)
-      // 2
       currentUserRef.setValue(self.user.email)
-      // 3
       currentUserRef.onDisconnectRemoveValue()
     }
     
+    // ATTACH LISTENER TO OBSERVE FOR VALUE CHANGES OF NEW CHOREITEMS THAT ARE BEING CREATED
+    // PLUS ORDER BY COMPLETED SO THAT COMPLETED TASKS FALL BELOW
     ref.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
       var newItems: [ChoreItem] = []
       
@@ -46,6 +42,7 @@ class ChoreListTableViewController: UITableViewController {
       self.tableView.reloadData()
     })
     
+    // OBSERVE FOR VALUE CHANGES TO SET ONLINE UER COUNT
     usersRef.observe(.value, with: { snapshot in
       if snapshot.exists() {
         self.userCountBarButtonItem?.title = snapshot.childrenCount.description
@@ -76,11 +73,14 @@ class ChoreListTableViewController: UITableViewController {
     }
   
   override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    
+    // CREATING THE UPDATE BUTTON ON SWIPE
     let updateAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Update" , handler: { (action:UITableViewRowAction!, indexPath:IndexPath!) -> Void in
       let choreItem = self.items[indexPath.row]
       
       let alert = UIAlertController(title: "Chore Item", message: "Edit a Chore", preferredStyle: .alert)
       
+      // ALERT SAVE BUTTON CLICKED AND DB OBJECT UPDATED
       let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
         guard let textField = alert.textFields?.first, let text = textField.text else { return }
         choreItem.ref?.updateChildValues([
@@ -88,16 +88,16 @@ class ChoreListTableViewController: UITableViewController {
           ])
       }
       
+      // ALERT CANCEL BUTTON CLICKED
       let cancelAction = UIAlertAction(title: "Cancel", style: .default)
       
       let textField = alert.addTextField(){ (textField) in
         textField.text = choreItem.name
       }
+      
       alert.addAction(saveAction)
       alert.addAction(cancelAction)
       self.present(alert, animated: true, completion: nil)
-      
-      // UPDATE DB
     })
     
     // DELETE CELL ROW SLIDER BUTTON
@@ -122,12 +122,15 @@ class ChoreListTableViewController: UITableViewController {
   }
   
   func toggleCellCheckbox(_ cell: UITableViewCell, isCompleted: Bool, chore: ChoreItem) {
+    // STYLING FOR INCOMPLETE ITEMS
     if !isCompleted {
       cell.accessoryType = .none
       cell.textLabel?.textColor = UIColor.black
       cell.detailTextLabel?.textColor = UIColor.black
       cell.detailTextLabel?.text = "Added By: " + chore.addedByUser
+      
     } else {
+      // STYLING FOR COMPLETE ITEMS
       cell.accessoryType = .checkmark
       cell.textLabel?.textColor = UIColor.gray
       cell.detailTextLabel?.textColor = UIColor.gray
@@ -136,15 +139,18 @@ class ChoreListTableViewController: UITableViewController {
   }
     
   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
+
     let alert = UIAlertController(title: "Chore Item", message: "Add a Chore", preferredStyle: .alert)
     
+    // ALERT SAVE BUTTON PRESSED AND SAVED TO DB
     let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-    guard let textField = alert.textFields?.first, let text = textField.text else { return }
+      guard let textField = alert.textFields?.first, let text = textField.text else { return }
       let choreItem = ChoreItem(name: text, addedByUser: self.user.email, completedByUser: "", completed: false)
-    let choreItemRef = self.ref.child(text.lowercased())
-    choreItemRef.setValue(choreItem.toAnyObject())
+      let choreItemRef = self.ref.child(text.lowercased())
+      choreItemRef.setValue(choreItem.toAnyObject())
     }
     
+    // ALERT CANCEL BUTTON PRESSED
     let cancelAction = UIAlertAction(title: "Cancel", style: .default)
     
     alert.addTextField()

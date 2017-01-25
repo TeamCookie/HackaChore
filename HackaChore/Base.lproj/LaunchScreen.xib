@@ -11,29 +11,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" id="qcN-j2-aqC">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HC" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="250" y="316" width="191" height="141"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="141" id="Lf0-R9-Fxs"/>
-                        <constraint firstAttribute="width" constant="191" id="dKg-aR-pSX"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="128"/>
-                    <color key="textColor" red="0.91180288791656494" green="0.91177564859390259" blue="0.91179108619689941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Bhk-nJ-6CT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.2080591691" green="0.66083679139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="23" id="502-aY-QID"/>
-                <constraint firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" constant="39" id="Uxm-BY-ysF"/>
+                <constraint firstItem="Bhk-nJ-6CT" firstAttribute="top" secondItem="qcN-j2-aqC" secondAttribute="top" id="0Q1-S1-hQ2"/>
+                <constraint firstItem="Bhk-nJ-6CT" firstAttribute="leading" secondItem="qcN-j2-aqC" secondAttribute="leading" id="5pc-fN-n2o"/>
+                <constraint firstAttribute="trailing" secondItem="Bhk-nJ-6CT" secondAttribute="trailing" id="CxO-ls-4iS"/>
+                <constraint firstAttribute="bottom" secondItem="Bhk-nJ-6CT" secondAttribute="bottom" id="NOF-YS-pTw"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="548" y="455"/>
+            <point key="canvasLocation" x="576" y="68"/>
         </view>
     </objects>
+    <resources>
+        <image name="splashscreen" width="1500" height="750"/>
+    </resources>
 </document>

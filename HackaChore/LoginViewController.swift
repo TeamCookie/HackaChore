@@ -10,6 +10,7 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // SETTING BACKGROUND IMAGE FOR LOGIN PAGE
     var bgImage = UIImage(named: "background")
     var imageView = UIImageView(frame: self.view.bounds)
     imageView.image = bgImage

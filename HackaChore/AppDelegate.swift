@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]? = [:]) -> Bool {
     UIApplication.shared.statusBarStyle = .lightContent
     
+    // CONFIRURING FIREBASE DATABASE
     FIRApp.configure()
     
     return true
