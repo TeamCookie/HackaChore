@@ -135,7 +135,7 @@ class ChoreListTableViewController: UITableViewController {
       cell.accessoryType = .checkmark
       cell.textLabel?.textColor = UIColor.gray
       cell.detailTextLabel?.textColor = UIColor.gray
-      cell.detailTextLabel?.text = "Added By: " + chore.addedByUser + " / Completed By:" + chore.completedByUser
+      cell.detailTextLabel?.text = "Added By: " + chore.addedByUser + " / Completed By: " + chore.completedByUser
     }
   }
     
